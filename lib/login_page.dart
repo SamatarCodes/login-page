@@ -73,10 +73,14 @@ class _loginPageState extends State<loginPage> {
                       fontSize: 15.0,
                     ),
                   ),
-                  title: Text(
-                    'Password',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                  title: TextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Password',
+                      hintStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
