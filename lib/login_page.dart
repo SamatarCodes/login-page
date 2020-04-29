@@ -104,21 +104,3 @@ class _loginPageState extends State<loginPage> {
     );
   }
 }
-
-/*
-
-Container(
-margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-child: Align(
-alignment: Alignment.bottomCenter,
-child: Text(
-"DON'T HAVE AN ACCOUNT? SIGN UP",
-style: TextStyle(
-color: Colors.grey[700],
-),
-),
-),
-),
-
-
- */
