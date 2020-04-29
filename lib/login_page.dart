@@ -33,56 +33,20 @@ class _loginPageState extends State<loginPage> {
               style: TextStyle(fontSize: 35.0),
             ),
             SizedBox(
-              height: 10.0,
+              height: 20.0,
             ),
-            Card(
-              margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListTile(
-                  leading: Icon(
-                    FontAwesomeIcons.idCard,
-                  ),
-                  title: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Email',
-                      hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            ReusableCard(
+              placeholder: 'Email',
+              icon: FontAwesomeIcons.idCard,
             ),
-            Card(
-              margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListTile(
-                  leading: Icon(
-                    FontAwesomeIcons.lock,
-                  ),
-                  trailing: Text(
-                    'Forgot?',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15.0,
-                    ),
-                  ),
-                  title: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Password',
-                      hintStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
+            ReusableCard(
+              placeholder: 'Password',
+              icon: FontAwesomeIcons.lock,
+              trailingString: Text(
+                'Forgot?',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 15.0,
                 ),
               ),
             ),
@@ -116,6 +80,40 @@ class _loginPageState extends State<loginPage> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+  String placeholder;
+  IconData icon;
+  Widget trailingString;
+  ReusableCard({@required this.placeholder, this.icon, this.trailingString});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 30.0),
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListTile(
+          leading: Icon(
+            icon,
+          ),
+          trailing: trailingString,
+          title: TextField(
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: placeholder,
+              hintStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+          ),
         ),
       ),
     );
