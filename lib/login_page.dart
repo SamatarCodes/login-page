@@ -71,11 +71,29 @@ class _loginPageState extends State<loginPage> {
                 margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Text(
-                    "DON'T HAVE AN ACCOUNT? SIGN UP",
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "DON'T HAVE AN ACCOUNT? ",
+                        style: TextStyle(
+                          color: Colors.grey[700],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            print('clicked');
+                          });
+                        },
+                        child: Text(
+                          'SIGN UP',
+                          style: TextStyle(
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -86,3 +104,21 @@ class _loginPageState extends State<loginPage> {
     );
   }
 }
+
+/*
+
+Container(
+margin: EdgeInsets.symmetric(vertical: 15.0, horizontal: 30.0),
+child: Align(
+alignment: Alignment.bottomCenter,
+child: Text(
+"DON'T HAVE AN ACCOUNT? SIGN UP",
+style: TextStyle(
+color: Colors.grey[700],
+),
+),
+),
+),
+
+
+ */
